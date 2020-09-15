@@ -1,13 +1,13 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU\Employee;
+namespace XeroPHP\Models\PayrollNZ\Employee;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate\LeaveLine;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate\SuperLine;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate\EarningsLine;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate\DeductionLine;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate\ReimbursementLine;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate\LeaveLine;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate\SuperLine;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate\EarningsLine;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate\DeductionLine;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate\ReimbursementLine;
 
 class PayTemplate extends Remote\Model
 {
@@ -103,11 +103,11 @@ class PayTemplate extends Remote\Model
     public static function getProperties()
     {
         return [
-            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate\\EarningsLine', true, false],
-            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate\\DeductionLine', true, false],
-            'SuperLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate\\SuperLine', false, false],
-            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate\\ReimbursementLine', true, false],
-            'LeaveLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate\\LeaveLine', false, false],
+            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate\\EarningsLine', true, false],
+            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate\\DeductionLine', true, false],
+            'SuperLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate\\SuperLine', false, false],
+            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate\\ReimbursementLine', true, false],
+            'LeaveLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate\\LeaveLine', false, false],
         ];
     }
 

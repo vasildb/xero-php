@@ -1,12 +1,12 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\PayItem\LeaveType;
-use XeroPHP\Models\PayrollAU\PayItem\EarningsRate;
-use XeroPHP\Models\PayrollAU\PayItem\DeductionType;
-use XeroPHP\Models\PayrollAU\PayItem\ReimbursementType;
+use XeroPHP\Models\PayrollNZ\PayItem\LeaveType;
+use XeroPHP\Models\PayrollNZ\PayItem\EarningsRate;
+use XeroPHP\Models\PayrollNZ\PayItem\DeductionType;
+use XeroPHP\Models\PayrollNZ\PayItem\ReimbursementType;
 
 class PayItem extends Remote\Model
 {
@@ -98,10 +98,10 @@ class PayItem extends Remote\Model
     public static function getProperties()
     {
         return [
-            'EarningsRates' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\PayItem\\EarningsRate', true, false],
-            'DeductionTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\PayItem\\DeductionType', true, false],
-            'LeaveTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\PayItem\\LeaveType', true, false],
-            'ReimbursementTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\PayItem\\ReimbursementType', true, false],
+            'EarningsRates' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\PayItem\\EarningsRate', true, false],
+            'DeductionTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\PayItem\\DeductionType', true, false],
+            'LeaveTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\PayItem\\LeaveType', true, false],
+            'ReimbursementTypes' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\PayItem\\ReimbursementType', true, false],
         ];
     }
 

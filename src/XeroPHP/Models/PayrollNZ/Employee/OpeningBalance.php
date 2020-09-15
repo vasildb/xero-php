@@ -1,11 +1,11 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU\Employee;
+namespace XeroPHP\Models\PayrollNZ\Employee;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Payslip\EarningsLine;
-use XeroPHP\Models\PayrollAU\Payslip\DeductionLine;
-use XeroPHP\Models\PayrollAU\Payslip\ReimbursementLine;
+use XeroPHP\Models\PayrollNZ\Payslip\EarningsLine;
+use XeroPHP\Models\PayrollNZ\Payslip\DeductionLine;
+use XeroPHP\Models\PayrollNZ\Payslip\ReimbursementLine;
 
 class OpeningBalance extends Remote\Model
 {
@@ -163,10 +163,10 @@ class OpeningBalance extends Remote\Model
         return [
             'OpeningBalanceDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'Tax' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\EarningsLine', true, false],
-            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\DeductionLine', true, false],
+            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\EarningsLine', true, false],
+            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\DeductionLine', true, false],
             'SuperLines' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\ReimbursementLine', true, false],
+            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\ReimbursementLine', true, false],
             'LeaveLines' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'EarningsRateID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'Amount' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],

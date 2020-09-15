@@ -1,9 +1,9 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\LeaveApplication\LeavePeriod;
+use XeroPHP\Models\PayrollNZ\LeaveApplication\LeavePeriod;
 
 class LeaveApplication extends Remote\Model
 {
@@ -129,7 +129,7 @@ class LeaveApplication extends Remote\Model
             'StartDate' => [true, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'EndDate' => [true, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'Description' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'LeavePeriods' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\LeaveApplication\\LeavePeriod', true, false],
+            'LeavePeriods' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\LeaveApplication\\LeavePeriod', true, false],
         ];
     }
 

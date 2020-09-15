@@ -1,6 +1,6 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
 
@@ -164,7 +164,7 @@ class PayRun extends Remote\Model
             'PayRunStatus' => [false, self::PROPERTY_TYPE_ENUM, null, false, false],
             'PaymentDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'PayslipMessage' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'Payslips' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip', true, false],
+            'Payslips' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip', true, false],
             'Wages' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Deductions' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Tax' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],

@@ -1,6 +1,6 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU\Timesheet;
+namespace XeroPHP\Models\PayrollNZ\Timesheet;
 
 use XeroPHP\Remote;
 

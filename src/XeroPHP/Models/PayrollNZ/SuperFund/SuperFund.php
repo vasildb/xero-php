@@ -1,6 +1,6 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU\SuperFund;
+namespace XeroPHP\Models\PayrollNZ\SuperFund;
 
 use XeroPHP\Remote;
 

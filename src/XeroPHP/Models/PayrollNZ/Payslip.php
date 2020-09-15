@@ -1,16 +1,16 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Payslip\TaxLine;
-use XeroPHP\Models\PayrollAU\Payslip\EarningsLine;
-use XeroPHP\Models\PayrollAU\Payslip\DeductionLine;
-use XeroPHP\Models\PayrollAU\Payslip\LeaveAccrualLine;
-use XeroPHP\Models\PayrollAU\Payslip\LeaveEarningsLine;
-use XeroPHP\Models\PayrollAU\Payslip\ReimbursementLine;
-use XeroPHP\Models\PayrollAU\Payslip\SuperannuationLine;
-use XeroPHP\Models\PayrollAU\Payslip\TimesheetEarningsLine;
+use XeroPHP\Models\PayrollNZ\Payslip\TaxLine;
+use XeroPHP\Models\PayrollNZ\Payslip\EarningsLine;
+use XeroPHP\Models\PayrollNZ\Payslip\DeductionLine;
+use XeroPHP\Models\PayrollNZ\Payslip\LeaveAccrualLine;
+use XeroPHP\Models\PayrollNZ\Payslip\LeaveEarningsLine;
+use XeroPHP\Models\PayrollNZ\Payslip\ReimbursementLine;
+use XeroPHP\Models\PayrollNZ\Payslip\SuperannuationLine;
+use XeroPHP\Models\PayrollNZ\Payslip\TimesheetEarningsLine;
 
 class Payslip extends Remote\Model
 {
@@ -207,13 +207,13 @@ class Payslip extends Remote\Model
             'EmployeeID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'PayslipID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'PayRunID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\EarningsLine', true, false],
-            'TimesheetEarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\TimesheetEarningsLine', true, false],
-            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\DeductionLine', true, false],
-            'LeaveAccrualLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\LeaveAccrualLine', true, false],
-            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\ReimbursementLine', true, false],
-            'SuperannuationLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\SuperannuationLine', true, false],
-            'TaxLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\TaxLine', true, false],
+            'EarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\EarningsLine', true, false],
+            'TimesheetEarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\TimesheetEarningsLine', true, false],
+            'DeductionLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\DeductionLine', true, false],
+            'LeaveAccrualLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\LeaveAccrualLine', true, false],
+            'ReimbursementLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\ReimbursementLine', true, false],
+            'SuperannuationLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\SuperannuationLine', true, false],
+            'TaxLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\TaxLine', true, false],
             'FirstName' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'LastName' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'EmployeeGroup' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
@@ -224,7 +224,7 @@ class Payslip extends Remote\Model
             'Tax' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Super' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
             'Reimbursements' => [false, self::PROPERTY_TYPE_FLOAT, null, false, false],
-            'LeaveEarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Payslip\\LeaveEarningsLine', true, false],
+            'LeaveEarningsLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Payslip\\LeaveEarningsLine', true, false],
         ];
     }
 

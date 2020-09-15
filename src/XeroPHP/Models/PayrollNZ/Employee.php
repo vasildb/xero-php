@@ -1,15 +1,15 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Employee\BankAccount;
-use XeroPHP\Models\PayrollAU\Employee\HomeAddress;
-use XeroPHP\Models\PayrollAU\Employee\PayTemplate;
-use XeroPHP\Models\PayrollAU\Employee\LeaveBalance;
-use XeroPHP\Models\PayrollAU\Employee\OpeningBalance;
-use XeroPHP\Models\PayrollAU\Employee\TaxDeclaration;
-use XeroPHP\Models\PayrollAU\Employee\SuperMembership;
+use XeroPHP\Models\PayrollNZ\Employee\BankAccount;
+use XeroPHP\Models\PayrollNZ\Employee\HomeAddress;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate;
+use XeroPHP\Models\PayrollNZ\Employee\LeaveBalance;
+use XeroPHP\Models\PayrollNZ\Employee\OpeningBalance;
+use XeroPHP\Models\PayrollNZ\Employee\TaxDeclaration;
+use XeroPHP\Models\PayrollNZ\Employee\SuperMembership;
 
 class Employee extends Remote\Model
 {
@@ -273,7 +273,7 @@ class Employee extends Remote\Model
             'FirstName' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'LastName' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'DateOfBirth' => [true, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
-            'HomeAddress' => [true, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\HomeAddress', false, false],
+            'HomeAddress' => [true, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\HomeAddress', false, false],
             'StartDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'Title' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'MiddleNames' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
@@ -290,16 +290,16 @@ class Employee extends Remote\Model
             'OrdinaryEarningsRateID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'PayrollCalendarID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'EmployeeGroupName' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'BankAccounts' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\BankAccount', true, false],
-            'PayTemplate' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\PayTemplate', false, false],
-            'OpeningBalances' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\OpeningBalance', true, false],
-            'LeaveBalances' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\LeaveBalance', true, false],
-            'SuperMemberships' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\SuperMembership', true, false],
+            'BankAccounts' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\BankAccount', true, false],
+            'PayTemplate' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\PayTemplate', false, false],
+            'OpeningBalances' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\OpeningBalance', true, false],
+            'LeaveBalances' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\LeaveBalance', true, false],
+            'SuperMemberships' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\SuperMembership', true, false],
             'TerminationDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'EmployeeID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'Status' => [false, self::PROPERTY_TYPE_ENUM, null, false, false],
             'UpdatedDateUTC' => [false, self::PROPERTY_TYPE_TIMESTAMP, '\\DateTimeInterface', false, false],
-            'TaxDeclaration' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Employee\\TaxDeclaration', false, false],
+            'TaxDeclaration' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Employee\\TaxDeclaration', false, false],
         ];
     }
 

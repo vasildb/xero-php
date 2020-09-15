@@ -1,9 +1,9 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU\Employee;
+namespace XeroPHP\Models\PayrollNZ\Employee;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\PayItem;
+use XeroPHP\Models\PayrollNZ\PayItem;
 
 class LeaveBalance extends Remote\Model
 {
@@ -96,7 +96,7 @@ class LeaveBalance extends Remote\Model
             'LeaveName' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'LeaveTypeID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'NumberOfUnits' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'TypeOfUnits' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\PayItem', true, false],
+            'TypeOfUnits' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\PayItem', true, false],
         ];
     }
 

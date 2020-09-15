@@ -1,10 +1,10 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Setting\Account;
-use XeroPHP\Models\PayrollAU\Setting\TrackingCategory;
+use XeroPHP\Models\PayrollNZ\Setting\Account;
+use XeroPHP\Models\PayrollNZ\Setting\TrackingCategory;
 
 class Setting extends Remote\Model
 {
@@ -90,8 +90,8 @@ class Setting extends Remote\Model
     public static function getProperties()
     {
         return [
-            'Accounts' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Setting\\Account', true, false],
-            'TrackingCategories' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Setting\\TrackingCategory', true, false],
+            'Accounts' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Setting\\Account', true, false],
+            'TrackingCategories' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Setting\\TrackingCategory', true, false],
             'DaysInPayrollYear' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
         ];
     }

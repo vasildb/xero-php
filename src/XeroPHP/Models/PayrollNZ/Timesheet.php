@@ -1,9 +1,9 @@
 <?php
 
-namespace XeroPHP\Models\PayrollAU;
+namespace XeroPHP\Models\PayrollNZ;
 
 use XeroPHP\Remote;
-use XeroPHP\Models\PayrollAU\Timesheet\TimesheetLine;
+use XeroPHP\Models\PayrollNZ\Timesheet\TimesheetLine;
 
 class Timesheet extends Remote\Model
 {
@@ -121,7 +121,7 @@ class Timesheet extends Remote\Model
             'EmployeeID' => [true, self::PROPERTY_TYPE_STRING, null, false, false],
             'StartDate' => [true, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'EndDate' => [true, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
-            'TimesheetLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollAU\\Timesheet\\TimesheetLine', true, false],
+            'TimesheetLines' => [false, self::PROPERTY_TYPE_OBJECT, 'PayrollNZ\\Timesheet\\TimesheetLine', true, false],
             'Status' => [false, self::PROPERTY_TYPE_ENUM, null, false, false],
             'Hours' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'TimesheetID' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
