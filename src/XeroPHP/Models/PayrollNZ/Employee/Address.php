@@ -36,13 +36,13 @@ class Address extends Remote\Model
      * @property string countryName
      */
 
-     /**
+    /**
      * PostCode for employee address (max length = 4).
      *
      * @property string postCode
      */
 
-     /**
+    /**
      * Get the resource uri of the class (Contacts) etc.
      *
      * @return string
@@ -236,7 +236,7 @@ class Address extends Remote\Model
      *
      * @return Address
      */
-    public function setPostalCode($value)
+    public function setPostCode($value)
     {
         $this->propertyUpdated('postCode', $value);
         $this->_data['postCode'] = $value;

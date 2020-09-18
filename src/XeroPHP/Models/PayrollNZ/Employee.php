@@ -2,14 +2,14 @@
 
 namespace XeroPHP\Models\PayrollNZ;
 
-use XeroPHP\Remote;
 use XeroPHP\Models\PayrollNZ\Employee\BankAccount;
-use XeroPHP\Models\PayrollNZ\Employee\HomeAddress;
-use XeroPHP\Models\PayrollNZ\Employee\PayTemplate;
+use XeroPHP\Models\PayrollNZ\Employee\Address;
 use XeroPHP\Models\PayrollNZ\Employee\LeaveBalance;
 use XeroPHP\Models\PayrollNZ\Employee\OpeningBalance;
-use XeroPHP\Models\PayrollNZ\Employee\TaxDeclaration;
+use XeroPHP\Models\PayrollNZ\Employee\PayTemplate;
 use XeroPHP\Models\PayrollNZ\Employee\SuperMembership;
+use XeroPHP\Models\PayrollNZ\Employee\TaxDeclaration;
+use XeroPHP\Remote;
 
 class Employee extends Remote\Model
 {
@@ -59,7 +59,7 @@ class Employee extends Remote\Model
     /**
      * The email address for the employee (max length = 100).
      *
-     * @property string Email
+     * @property string email
      */
 
     /**
@@ -278,7 +278,7 @@ class Employee extends Remote\Model
             'startDate' => [false, self::PROPERTY_TYPE_DATE, '\\DateTimeInterface', false, false],
             'Title' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'MiddleNames' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
-            'Email' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
+            'email' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'gender' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'Mobile' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
             'Phone' => [false, self::PROPERTY_TYPE_STRING, null, false, false],
@@ -461,7 +461,7 @@ class Employee extends Remote\Model
      */
     public function getEmail()
     {
-        return $this->_data['Email'];
+        return $this->_data['email'];
     }
 
     /**
@@ -471,8 +471,8 @@ class Employee extends Remote\Model
      */
     public function setEmail($value)
     {
-        $this->propertyUpdated('Email', $value);
-        $this->_data['Email'] = $value;
+        $this->propertyUpdated('email', $value);
+        $this->_data['email'] = $value;
 
         return $this;
     }
@@ -728,7 +728,7 @@ class Employee extends Remote\Model
     public function addBankAccount(BankAccount $value)
     {
         $this->propertyUpdated('BankAccounts', $value);
-        if (! isset($this->_data['BankAccounts'])) {
+        if (!isset($this->_data['BankAccounts'])) {
             $this->_data['BankAccounts'] = new Remote\Collection();
         }
         $this->_data['BankAccounts'][] = $value;
@@ -773,7 +773,7 @@ class Employee extends Remote\Model
     public function addOpeningBalance(OpeningBalance $value)
     {
         $this->propertyUpdated('OpeningBalances', $value);
-        if (! isset($this->_data['OpeningBalances'])) {
+        if (!isset($this->_data['OpeningBalances'])) {
             $this->_data['OpeningBalances'] = new Remote\Collection();
         }
         $this->_data['OpeningBalances'][] = $value;
@@ -797,7 +797,7 @@ class Employee extends Remote\Model
     public function addLeaveBalance(LeaveBalance $value)
     {
         $this->propertyUpdated('LeaveBalances', $value);
-        if (! isset($this->_data['LeaveBalances'])) {
+        if (!isset($this->_data['LeaveBalances'])) {
             $this->_data['LeaveBalances'] = new Remote\Collection();
         }
         $this->_data['LeaveBalances'][] = $value;
@@ -821,7 +821,7 @@ class Employee extends Remote\Model
     public function addSuperMembership(SuperMembership $value)
     {
         $this->propertyUpdated('SuperMemberships', $value);
-        if (! isset($this->_data['SuperMemberships'])) {
+        if (!isset($this->_data['SuperMemberships'])) {
             $this->_data['SuperMemberships'] = new Remote\Collection();
         }
         $this->_data['SuperMemberships'][] = $value;

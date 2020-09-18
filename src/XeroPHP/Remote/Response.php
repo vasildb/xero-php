@@ -115,7 +115,6 @@ class Response
 
                 throw new BadRequestException();
 
-
             /** @noinspection PhpMissingBreakStatementInspection */
             // no break
             case self::STATUS_UNAUTHORISED:
@@ -126,7 +125,7 @@ class Response
 
                 $response = urldecode($this->response_body);
                 if (false !== stripos($response,
-                        'You are not permitted to access this resource without the reporting role or higher privileges')) {
+                    'You are not permitted to access this resource without the reporting role or higher privileges')) {
                     throw new ReportPermissionMissingException();
                 }
                 throw new ForbiddenException();
@@ -279,7 +278,7 @@ class Response
     public function findElementErrors($element, $element_index)
     {
         foreach ($element as $property => $value) {
-            switch ((string)$property) {
+            switch ((string) $property) {
                 case 'ValidationErrors':
                     if (is_array($value)) {
                         foreach ($value as $error) {
@@ -315,15 +314,15 @@ class Response
         foreach ($sxml as $child_index => $root_child) {
             switch ($child_index) {
                 case 'ErrorNumber':
-                    $this->root_error['code'] = (string)$root_child;
+                    $this->root_error['code'] = (string) $root_child;
 
                     break;
                 case 'Type':
-                    $this->root_error['type'] = (string)$root_child;
+                    $this->root_error['type'] = (string) $root_child;
 
                     break;
                 case 'Message':
-                    $this->root_error['message'] = (string)$root_child;
+                    $this->root_error['message'] = (string) $root_child;
 
                     break;
                 case 'Payslip':
@@ -378,6 +377,11 @@ class Response
                     $this->elements = $root_child;
 
                     break;
+
+                case Helpers::singularize($this->resource);
+                    $this->elements = [$root_child];
+
+                    break;
                 default:
                     //Happy to make the assumption that there will only be one
                     //root node with > than 2D children.
@@ -402,12 +406,16 @@ class Response
     }
 
     /*
-    * Gets the last part of the url path
-    */
-    private function resolveResource() {
+     * Gets the last part of the url path
+     */
+    private function resolveResource()
+    {
         $path = parse_url($this->request->getUrl()->getFullUrl(), PHP_URL_PATH);
+        $path = trim($path, '/');
         $resource = explode('/', $path);
-        $resource = strtolower(end($resource));
-        $this->resource = $resource;
+        if(count($resource) >= 2) {
+            $resource = strtolower($resource[2]);
+            $this->resource = $resource;
+        }
     }
 }
