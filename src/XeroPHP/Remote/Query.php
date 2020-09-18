@@ -33,10 +33,12 @@ class Query
     private $offset;
 
     private $includeArchived;
-    
+
     private $createdByMyApp;
 
     private $params;
+
+    private $filter;
 
     public function __construct(Application $app)
     {
@@ -49,6 +51,7 @@ class Query
         $this->includeArchived = false;
         $this->createdByMyApp = false;
         $this->params = [];
+        $this->filter = [];
     }
 
     /**
@@ -222,7 +225,7 @@ class Query
          * @var ObjectInterface
          */
         $from_class = $this->from_class;
-        if (! $from_class::isPageable()) {
+        if (!$from_class::isPageable()) {
             throw new Exception(sprintf('%s does not support paging.', $from_class));
         }
         $this->page = (int) $page;
@@ -248,11 +251,11 @@ class Query
 
         return $this;
     }
-    
+
     public function createdByMyApp($createdByMyApp = true)
     {
         $this->createdByMyApp = (bool) $createdByMyApp;
-        
+
         return $this;
     }
 
@@ -274,7 +277,7 @@ class Query
         $from_class = $this->from_class;
         $url = new URL(
             $this->app,
-            $from_class::getResourceURI(),
+            $from_class::getResourceURI() . '?' . $this->getFilter(),
             $from_class::getAPIStem()
         );
         $request = new Request($this->app, $url, Request::METHOD_GET);
@@ -287,7 +290,7 @@ class Query
         // Concatenate where statements
         $where = $this->getWhere();
 
-        if (! empty($where)) {
+        if (!empty($where)) {
             $request->setParameter('where', $where);
         }
 
@@ -322,7 +325,7 @@ class Query
         if ($this->includeArchived !== false) {
             $request->setParameter('includeArchived', 'true');
         }
-        
+
         if ($this->createdByMyApp !== false) {
             $request->setParameter('createdByMyApp', 'true');
         }
@@ -358,5 +361,17 @@ class Query
     public function getFrom()
     {
         return $this->from_class;
+    }
+
+    public function filter($name, $value)
+    {
+        $this->filter[] = sprintf('%s==%s', $name, $value);
+
+        return $this;
+    }
+
+    private function getFilter()
+    {
+        return 'filter=' . implode(',', $this->filter);
     }
 }

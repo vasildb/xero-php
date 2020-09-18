@@ -72,12 +72,17 @@ class Response
 
     private $root_error;
 
+    private $pagination;
+
+    private $resource;
+
     public function __construct(Request $request, $response_body, $status, $headers)
     {
         $this->request = $request;
         $this->response_body = $response_body;
         $this->status = $status;
         $this->headers = $headers;
+        $this->resolveResource();
     }
 
     /**
@@ -327,7 +332,10 @@ class Response
                     $this->elements[] = Helpers::XMLToArray($root_child);
 
                     break;
+                case 'pagination':
+                    $this->pagination = Helpers::XMLToArray($root_child);
 
+                    break;
                 default:
                     //Happy to make the assumption that there will only be one
                     //root node with > than 2D children.
@@ -362,7 +370,14 @@ class Response
                     $this->elements[] = $root_child;
 
                     break;
+                case 'pagination':
+                    $this->pagination = $root_child;
 
+                    break;
+                case $this->resource:
+                    $this->elements = $root_child;
+
+                    break;
                 default:
                     //Happy to make the assumption that there will only be one
                     //root node with > than 2D children.
@@ -379,5 +394,20 @@ class Response
     public function parseHTML()
     {
         parse_str($this->response_body, $this->oauth_response);
+    }
+
+    public function getPagination()
+    {
+        return $this->pagination;
+    }
+
+    /*
+    * Gets the last part of the url path
+    */
+    private function resolveResource() {
+        $path = parse_url($this->request->getUrl()->getFullUrl(), PHP_URL_PATH);
+        $resource = explode('/', $path);
+        $resource = strtolower(end($resource));
+        $this->resource = $resource;
     }
 }
